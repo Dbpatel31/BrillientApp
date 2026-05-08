@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/productListFragment">
+
+    <!-- 1. Product List Screen -->
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.example.brillentapp.presentation.product_list.ProductListFragment"
+        android:label="Product List"
+        tools:layout="@layout/fragment_product_list">
+
+        <!-- Action to go to Detail Screen -->
+        <action
+            android:id="@+id/actionToListToDetail"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+    <!-- 2. Product Detail Screen -->
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.brillentapp.presentation.product_detail.ProductDetailFragment"
+        android:label="Product Detail"
+        tools:layout="@layout/fragment_product_detail">
+
+        <!-- Argument to receive Product ID -->
+        <argument
+            android:name="productId"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
